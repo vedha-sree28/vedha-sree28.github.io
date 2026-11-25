@@ -2,300 +2,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vedha Sree | Data Science Portfolio</title>
+    <title>Vedha Sree | Data Science Portfolio</title>
+    <meta name="description" content="Vedha Sree - Data Science, AI, Machine Learning and Aerospace Research Portfolio.">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #0b1120;
-    color: #e2e8f0;
-    line-height: 1.7;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-header {
-    padding: 25px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #263247;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
 
-header h2 {
-    color: #7dd3fc;
-}
+        a {
+            text-decoration: none;
+        }
 
-nav a {
-    color: #e2e8f0;
-    text-decoration: none;
-    margin-left: 20px;
-}
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #0b1120;
+            border-bottom: 1px solid #263247;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.hero {
-    padding: 100px 10%;
-}
+        .logo {
+            color: #7dd3fc;
+            font-size: 23px;
+            font-weight: bold;
+        }
 
-.hero p {
-    color: #94a3b8;
-    max-width: 600px;
-}
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-.hero h1 {
-    font-size: 48px;
-    margin: 15px 0;
-}
+        nav a {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
 
-.highlight {
-    color: #7dd3fc;
-}
+        nav a:hover {
+            color: #7dd3fc;
+        }
 
-section {
-    padding: 50px 10%;
-}
+        .hero {
+            min-height: 85vh;
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-h2 {
-    color: #7dd3fc;
-    margin-bottom: 20px;
-}
+        .intro {
+            color: #7dd3fc;
+            letter-spacing: 3px;
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-.project {
-    background: #172033;
-    padding: 25px;
-    margin: 20px 0;
-    border-radius: 12px;
-    border: 1px solid #263247;
-}
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
 
-.project a {
-    color: #7dd3fc;
-}
+        .highlight {
+            color: #7dd3fc;
+        }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
+        .hero p {
+            max-width: 680px;
+            color: #94a3b8;
+            font-size: 17px;
+        }
 
-.skills span {
-    background: #172033;
-    padding: 10px 18px;
-    border-radius: 8px;
-}
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #94a3b8;
-    border-top: 1px solid #263247;
-}
-</style>
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #7dd3fc;
+            color: #0b1120;
+        }
+
+        .primary:hover {
+            background: #38bdf8;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #7dd3fc;
+            color: #7dd3fc;
+        }
+
+        .secondary:hover {
+            background: #172033;
+        }
+
+        section {
+            padding: 70px 10%;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #7dd3fc;
+            margin-bottom: 30px;
+        }
+
+        .section-description {
+            color: #94a3b8;
+            max-width: 750px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: #172033;
+            border: 1px solid #263247;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #7dd3fc;
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            color: #f1f5f9;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            color: #7dd3fc !important;
+            font-size: 14px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #7dd3fc;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #172033;
+            border: 1px solid #263247;
+            color: #cbd5e1;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #7dd3fc;
+            border: 1px solid #263247;
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+
+        .contact-links a:hover {
+            background: #172033;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 10%;
+            border-top: 1px solid #263247;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 70px 8%;
+            }
+
+            section {
+                padding: 55px 8%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h2>Vedha Sree</h2>
+    <!-- NAVIGATION -->
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <header>
+        <a href="#" class="logo">Vedha Sree.</a>
 
-<div class="hero">
-    <p>HELLO, I'M VEDHA SREE</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <h1>
-        Data Science Student<br>
-        <span class="highlight">
-            Exploring AI & Aerospace
-        </span>
-    </h1>
 
-    <p>
-        I am an MSc Data Science student interested in
-        machine learning, data analytics, artificial
-        intelligence and aerospace research.
-    </p>
-</div>
+    <!-- HOMEPAGE -->
 
-<section id="about">
-    <h2>About Me</h2>
+    <div class="hero">
 
-    <p>
-        I am passionate about using data and technology
-        to solve real-world problems. My interests include
-        machine learning, predictive analytics and
-        aerospace applications.
-    </p>
-</section>
+        <p class="intro">HELLO, I'M VEDHA SREE</p>
 
-<section id="projects">
-    <h2>Featured Projects</h2>
-
-    <div class="project">
-        <h3>EV Charging Infrastructure Optimization</h3>
+        <h1>
+            Data Science Student<br>
+            <span class="highlight">
+                Exploring AI & Aerospace
+            </span>
+        </h1>
 
         <p>
-            A data science project involving EV demand
-            forecasting, spatial analysis and optimization
-            of charging infrastructure.
+            I am an MSc Data Science student passionate about
+            machine learning, data analytics, artificial
+            intelligence and aerospace research.
         </p>
 
-        <p>
-            <a href="https://github.com/vedha-sree28">
-                View on GitHub
+        <div class="buttons">
+
+            <a href="Vedha_Sree_Resume.pdf"
+               class="btn primary"
+               download>
+                Download Resume ↓
             </a>
-        </p>
-    </div>
 
-    <div class="project">
-        <h3>Aircraft Sensor Anomaly Detection</h3>
-
-        <p>
-            Research on detecting anomalies in aircraft
-            sensor time series under distribution shift.
-        </p>
-
-        <p>
-            <a href="https://github.com/vedha-sree28">
-                View on GitHub
+            <a href="#projects"
+               class="btn secondary">
+                Explore Projects
             </a>
-        </p>
+
+        </div>
+
     </div>
 
-    <div class="project">
-        <h3>PocketAI Studio</h3>
 
-        <p>
-            A personal AI application developed using
-            Python and Streamlit.
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p class="section-description">
+            I am a Data Science student interested in using
+            data and technology to solve real-world problems.
+
+            My interests include machine learning, predictive
+            analytics, artificial intelligence and aerospace
+            applications.
+
+            I enjoy exploring how data science can contribute
+            to intelligent systems and research.
         </p>
 
-        <p>
-            <a href="https://github.com/vedha-sree28">
-                View on GitHub
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="card">
+
+            <h3>ISRO - Internship</h3>
+
+            <p class="date">
+                December 2024 - January 2025
+            </p>
+
+            <p>
+                Worked on telemetry data input generation
+                for launch vehicles during my internship
+                at ISRO.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>DRDO - CVRDE</h3>
+
+            <p class="date">
+                February 2025 - March 2025
+            </p>
+
+            <p>
+                Developed a software prototype for
+                predictive display using C++ and Qt.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="card">
+
+            <h3>MSc Data Science</h3>
+
+            <p>VIT Chennai</p>
+
+            <p class="date">
+                Expected Graduation: 2027
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>BSc Bioinformatics and Data Science</h3>
+
+            <p>
+                Sathyabama Institute of Science and Technology
+            </p>
+
+            <p>CGPA: 8.66</p>
+
+            <p class="date">2022 - 2025</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+        <h2 class="section-title">Achievements</h2>
+
+        <div class="card">
+
+            <h3>Academic Excellence</h3>
+
+            <p>
+                Overall 2nd Rank - BSc Bioinformatics
+                and Data Science, 2022-2025 Batch.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Chancellor's Scholarship</h3>
+
+            <p>Merit Certificate - 2024</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Featured Projects</h2>
+
+        <p class="section-description">
+            A selection of academic, research and personal projects.
+        </p>
+
+        <div class="card">
+
+            <h3>EV Charging Infrastructure Optimization</h3>
+
+            <p>
+                Intelligent optimization of EV charging
+                infrastructure using demand forecasting,
+                spatial analysis and optimization techniques
+                for sustainable urban mobility.
+            </p>
+
+            <p>
+                Technologies: MATLAB, Machine Learning,
+                Data Analytics, Optimization.
+            </p>
+
+            <a href="https://github.com/vedha-sree28"
+               class="project-link"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub Profile →
             </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Aircraft Sensor Anomaly Detection</h3>
+
+            <p>
+                Research on anomaly detection in aircraft
+                sensor time series under cross-aircraft
+                distribution shift.
+            </p>
+
+            <p>
+                Technologies: Python, Time Series,
+                Machine Learning.
+            </p>
+
+            <a href="https://github.com/vedha-sree28"
+               class="project-link"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub Profile →
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>PocketAI Studio</h3>
+
+            <p>
+                A personal AI application developed using
+                Python and Streamlit with local language
+                model integration.
+            </p>
+
+            <p>
+                Technologies: Python, Streamlit, Ollama.
+            </p>
+
+            <a href="https://github.com/vedha-sree28"
+               class="project-link"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub Profile →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills">
+
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">R</span>
+            <span class="skill">MATLAB</span>
+            <span class="skill">C++</span>
+            <span class="skill">Qt</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Data Analytics</span>
+            <span class="skill">Data Visualization</span>
+            <span class="skill">Streamlit</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p class="section-description">
+            I'm interested in Data Science, AI and
+            aerospace-related research opportunities.
+            Feel free to connect with me.
         </p>
-    </div>
-</section>
 
-<section id="experience">
-    <h2>Experience</h2>
+        <div class="contact-links">
 
-    <div class="project">
-        <h3>ISRO - Internship</h3>
-        <p>
-            Worked on telemetry data input generation
-            for launch vehicles during my internship
-            at ISRO.
-        </p>
-        <p>
-            December 2024 - January 2025
-        </p>
-    </div>
+            <a href="https://github.com/vedha-sree28"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
 
-    <div class="project">
-        <h3>DRDO - CVRDE</h3>
-        <p>
-            Developed a software prototype for
-            predictive display using C++ and Qt.
-        </p>
-        <p>
-            February 2025 - March 2025
-        </p>
-    </div>
-</section>
+            <a href="https://www.linkedin.com/in/vedha-sree-m/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
 
-<section id="education">
-    <h2>Education</h2>
+        </div>
 
-    <div class="project">
-        <h3>MSc Data Science</h3>
-        <p>
-            VIT Chennai
-        </p>
-        <p>
-            Expected Graduation: 2027
-        </p>
-    </div>
+    </section>
 
-    <div class="project">
-        <h3>BSc Bioinformatics and Data Science</h3>
-        <p>
-            Sathyabama Institute of Science and Technology
-        </p>
-        <p>
-            CGPA: 8.66
-        </p>
-    </div>
-</section>
 
-<section id="achievements">
-    <h2>Achievements</h2>
+    <!-- FOOTER -->
 
-    <div class="project">
-        <h3>Academic Excellence</h3>
-        <p>
-            Overall 2nd Rank - BSc Bioinformatics
-            and Data Science, 2022-2025 Batch.
-        </p>
-    </div>
+    <footer>
 
-    <div class="project">
-        <h3>Chancellor's Scholarship</h3>
-        <p>
-            Merit Certificate - 2024
-        </p>
-    </div>
-</section>
+        <p>© 2026 Vedha Sree</p>
+        <p>Built with HTML and CSS</p>
 
-<section id="skills">
-    <h2>Technical Skills</h2>
-
-    <div class="skills">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>R</span>
-        <span>MATLAB</span>
-        <span>Machine Learning</span>
-        <span>Data Analytics</span>
-        <span>Data Visualization</span>
-        <span>Qt</span>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p>
-        GitHub:
-        <a href="https://github.com/vedha-sree28">
-            vedha-sree28
-        </a>
-    </p>
-
-    <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/vedha-sree-m/">
-            LinkedIn Profile
-        </a>
-    </p>
-</section>
-
-<footer>
-    © 2026 Vedha Sree | Data Science Portfolio
-</footer>
+    </footer>
 
 </body>
 </html>
